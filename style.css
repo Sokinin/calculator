@@ -1,0 +1,59 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+  }
+  
+  .calculator {
+    border: 1px solid #382f2f;
+    border-radius: 5px;
+    width: 400px;
+    /* background-image:url(https://img.freepik.com/premium-vector/pi-day-seamless-pattern-with-mathematical-constants-baked-pie-template-hand-drawn-illustration_2175-12164.jpg?semt=ais_hybrid) ; */
+    box-shadow: 1px 1px 1px 1px rgb(163, 121, 202);
+    background-color: rgb(90, 115, 204);
+  }
+  
+  .calculator-screen {
+    width: 90%;
+    height: 80px;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #d2ccd2;
+    color: #282424;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size: 4rem;
+    margin-left: 18px;
+  }
+  
+  button {
+    height: 60px;
+    font-size: 2rem!important;
+    border-radius: 1.5rem!important;
+    /* background-image: url(https://static.vecteezy.com/system/resources/previews/027/231/654/non_2x/illustration-graphic-of-aesthetic-background-template-with-simple-and-minimalist-pastel-colors-vector.jpg); */
+  }
+  
+  .equal-sign {
+    height: 98%;
+    grid-area: 2 / 4 / 6 / 5;
+  }
+  
+  .calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  .raduis{
+      border-radius: 50%!important;
+  }
+  
