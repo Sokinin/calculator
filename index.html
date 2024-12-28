@@ -40,10 +40,20 @@
           <button  type="button" data-mdb-button-init class="decimal function btn btn-secondary" value="." style="background-color:rgb(153, 145, 145);">.</button>
           <button  type="button" data-mdb-button-init class="all-clear function btn btn-danger btn-sm" value="all-clear">AC</button>
       
-          <button style="background-color: rgb(75, 205, 245); border-radius: 1.5rem;" type="button" data-mdb-button-init class="equal-sign operator btn btn-default" value="=">=</button>
-      
+          <button style="background-color: rgb(75, 205, 245); border-radius: 1.5rem;" type="button" data-mdb-button-init class="equal-sign operator btn btn-default hig" value="=">=</button>
+          <button  type="button"  class="his btn btn-light waves-effect" onclick="showHistory()" >history</button>
+
         </div>
       </div>
+      <div id="historyModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeHistory()">&times;</span>
+          <h2>Calculation History</h2>
+          <div class="history"></div>
+        </div>
+      </div>
+    
       <script src="script.js"></script>
+      <script src="test.js"></script>
 </body>
 </html>

@@ -24,6 +24,12 @@ const calculator = {
     }
   }
   
+  function Store(value=null,oper=null){
+    if (value != null && oper != null){
+      localStorage.setItem(value,oper);
+    }
+  }
+  
   function handleOperator(nextOperator) {
     const { firstOperand, displayValue, operator } = calculator
     const inputValue = parseFloat(displayValue);
@@ -41,10 +47,16 @@ const calculator = {
   
       calculator.displayValue = String(result);
       calculator.firstOperand = result;
+      // answer=result;
+      
     }
   
     calculator.waitingForSecondOperand = true;
     calculator.operator = nextOperator;
+    // if(nextOperator==null){
+    //   return answer;
+    // }
+    
   }
   
   const performCalculation = {
@@ -72,6 +84,7 @@ const calculator = {
   }
   
   updateDisplay();
+  let key=[];
   
   const keys = document.querySelector('.calculator-keys');
   keys.addEventListener('click', (event) => {
@@ -82,22 +95,37 @@ const calculator = {
   
     if (target.classList.contains('operator')) {
       handleOperator(target.value);
+      key.push(String(target.value));
+      if(target.value=="="){
+        key2=key.join(" ")
+        Store(key2,calculator.displayValue);
+        key=[];
+      }
       updateDisplay();
       return;
     }
   
     if (target.classList.contains('decimal')) {
       inputDecimal(target.value);
+      key.push(String(target.value));
       updateDisplay();
       return;
     }
   
     if (target.classList.contains('all-clear')) {
       resetCalculator();
+      key=[];
+      // console.log(calculator.displayValue);
       updateDisplay();
       return;
     }
+    
   
     inputDigit(target.value);
+    key.push(String(target.value));
     updateDisplay();
+
+    
   });
+
+  
